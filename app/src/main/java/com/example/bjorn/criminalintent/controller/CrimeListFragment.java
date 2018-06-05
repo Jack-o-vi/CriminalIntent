@@ -12,11 +12,13 @@ import android.widget.TextView;
 
 import com.example.bjorn.criminalintent.R;
 import com.example.bjorn.criminalintent.model.Crime;
+import com.example.bjorn.criminalintent.model.CrimeLab;
 
 import java.util.List;
 
 public class CrimeListFragment extends Fragment {
     private RecyclerView mCrimeRecyclerView;
+    private CrimeAdapter mAdapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -29,7 +31,16 @@ public class CrimeListFragment extends Fragment {
         mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager
                 (getActivity()));
 
+        updateUI();
+
         return view;
+    }
+
+    private void updateUI() {
+        CrimeLab crimeLab = CrimeLab.getInstance(getActivity());
+        List<Crime> crimes = crimeLab.getCrimes();
+        mAdapter = new CrimeAdapter(crimes);
+        mCrimeRecyclerView.setAdapter(mAdapter);
     }
 
     private class CrimeHolder extends RecyclerView.ViewHolder {
