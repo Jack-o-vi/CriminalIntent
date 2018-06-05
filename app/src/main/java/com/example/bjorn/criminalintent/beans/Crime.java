@@ -1,5 +1,6 @@
 package com.example.bjorn.criminalintent.beans;
 
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -11,9 +12,12 @@ import java.util.UUID;
 public class Crime {
     private UUID mId;
     private String mTitle;
+    private Date date;
+    private boolean solved;
 
     public Crime() {
         mId = UUID.randomUUID();
+        date = new Date();
     }
 
     public UUID getId() {
@@ -26,5 +30,21 @@ public class Crime {
 
     public void setTitle(String mTitle) {
         this.mTitle = mTitle;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public boolean isSolved() {
+        return solved;
+    }
+
+    public void setSolved(boolean solved) {
+        this.solved = solved;
     }
 }
