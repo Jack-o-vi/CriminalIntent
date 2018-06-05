@@ -16,7 +16,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 
 import com.example.bjorn.criminalintent.R;
-import com.example.bjorn.criminalintent.beans.Crime;
+import com.example.bjorn.criminalintent.model.Crime;
 
 /**
  * This class is a controller, which is interacted with model objects
