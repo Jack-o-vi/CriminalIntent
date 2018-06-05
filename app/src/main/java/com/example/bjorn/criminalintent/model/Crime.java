@@ -1,4 +1,4 @@
-package com.example.bjorn.criminalintent.beans;
+package com.example.bjorn.criminalintent.model;
 
 import java.util.Date;
 import java.util.UUID;
