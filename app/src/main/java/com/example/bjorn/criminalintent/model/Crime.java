@@ -1,5 +1,6 @@
 package com.example.bjorn.criminalintent.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
@@ -46,5 +47,12 @@ public class Crime {
 
     public void setSolved(boolean solved) {
         this.solved = solved;
+    }
+
+
+    public String getFormattedDate(){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss");
+        String formattedDate = simpleDateFormat.format(date);
+        return formattedDate;
     }
 }
